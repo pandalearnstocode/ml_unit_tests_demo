@@ -52,8 +52,9 @@ jobs:
         run: python -m pytest --cov-report term --cov-report xml:coverage.xml --cov=src tests/
 ```
 
-## Running unit tests and generating CLI, XML and HTML reports & publishing in sonar cloud
+## __Running unit tests and generating CLI, XML and HTML reports & publishing in sonar cloud__
 
 * Create sonar cloud token and pass that to a github actions step using env variable.
 * Turn off automatic analysis.
 * Use coverage package to generate coverage.xml
+
