@@ -23,3 +23,15 @@ jobs:
         with:
           name: code-coverage-xml
           path: coverage.xml
+      - name: Analyze with SonarCloud
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          projectBaseDir: src
+          args: >
+            -Dsonar.organization=pandalearnstocode
+            -Dsonar.projectKey=pandalearnstocode_ml_unit_tests_demo
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=src/
+            -Dsonar.test.exclusions=tests/**
+            -Dsonar.tests=tests/
+            -Dsonar.verbose=true
