@@ -1,6 +1,12 @@
 name: Run unit tests for ML workflows
 
-on: [push]
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+      types: [opened, synchronize, reopened]
+
 
 jobs:
   build-linux:
@@ -39,3 +45,7 @@ jobs:
             -Dsonar.verbose=true
         env:
           SONAR_TOKEN: '${{secrets.SONAR_TOKEN}}'
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-xml-coverage-path: ./coverage.xml
