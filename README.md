@@ -1,10 +1,15 @@
 # __Writing unit tests for ML workflows__
 
+
+## __Creating conda env for local execution__
+
 ```bash
 conda create -n unit_tests_ml_workflows python=3.8 -y
 conda activate unit_tests_ml_workflows
 pip install -r requirements.txt
 ```
+
+## __Running unit tests and generating CLI, XML and HTML reports__
 
 ```bash
 pytest .
@@ -14,6 +19,7 @@ pytest --cov-report term --cov-report html:coverage --cov=src tests/
 conda deactivate
 ```
 
+## __GitHub actions to trigger unit tests__
 
 ```bash
 name: Run unit tests for ML workflows
@@ -35,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Only needed if using setuptools-scm
+          fetch-depth: 0
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
