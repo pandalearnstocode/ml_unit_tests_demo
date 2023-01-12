@@ -26,7 +26,7 @@ jobs:
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          projectBaseDir: src
+          projectBaseDir: .
           args: >
             -Dsonar.organization=pandalearnstocode
             -Dsonar.projectKey=pandalearnstocode_ml_unit_tests_demo
