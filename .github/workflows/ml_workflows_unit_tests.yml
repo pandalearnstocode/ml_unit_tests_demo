@@ -19,7 +19,7 @@ jobs:
       - name: Run unit tests and generate coverage report
         run: python -m pytest --cov-report term --cov-report xml:coverage.xml --cov=src tests/
       - name: Upload coverage report to GitHub artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: code-coverage-xml
           path: coverage.xml
