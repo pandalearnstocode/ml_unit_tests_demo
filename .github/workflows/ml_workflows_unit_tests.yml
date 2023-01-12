@@ -11,6 +11,11 @@ on:
 jobs:
   build-linux:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      pull-requests: write
+      contents: read
+      id-token: write
     name: Check Python
     steps:
       - uses: actions/checkout@v3
@@ -48,4 +53,13 @@ jobs:
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-xml-coverage-path: coverage.xml
+          pytest-xml-coverage-path: ./coverage.xml
+          title: My Coverage Report Title
+          badge-title: My Badge Coverage Title
+          hide-badge: false
+          hide-report: false
+          create-new-comment: true
+          hide-comment: false
+          report-only-changed-files: false
+          remove-link-from-badge: false
+          unique-id-for-comment: python3.8
