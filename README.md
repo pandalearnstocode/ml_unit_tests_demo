@@ -51,3 +51,4 @@ jobs:
       - name: Run unit tests and generate coverage report
         run: python -m pytest --cov-report term --cov-report xml:coverage.xml --cov=src tests/
 ```
+
