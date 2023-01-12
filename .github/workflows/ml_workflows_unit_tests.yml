@@ -35,3 +35,5 @@ jobs:
             -Dsonar.test.exclusions=tests/**
             -Dsonar.tests=tests/
             -Dsonar.verbose=true
+        env:
+          GITHUB_TOKEN: '${{secrets.GITHUB_TOKEN}}'
