@@ -11,6 +11,8 @@ on:
 jobs:
   build-linux:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     name: Check Python
     steps:
       - uses: actions/checkout@v3
