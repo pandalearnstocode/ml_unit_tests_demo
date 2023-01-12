@@ -52,4 +52,3 @@ jobs:
         run: python -m pytest --cov-report term --cov-report xml:coverage.xml --cov=src tests/
 ```
 
-
